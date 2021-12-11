@@ -1,16 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-DIR="/tempdir"
-if [ -d "$DIR" ]; then
-  ### Take action if $DIR exists ###
-  echo "dir exists ${DIR}..."
-else
-  ###  Control will jump here if $DIR does NOT exists ###  
-  mkdir tempdir
-  mkdir tempdir/templates
-  mkdir tempdir/static
-fi
+mkdir -p tempdir
+mkdir -p tempdir/templates
+mkdir -p tempdir/static
 
 
 cp sample_app.py tempdir/.
